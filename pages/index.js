@@ -9,7 +9,9 @@ export default function Home() {
 
  useEffect(() => {
   (async () => {
-   const request = await axios('http://localhost:3000/api/products');
+   const request = await axios(
+    'http://next-test-eight-black.vercel.app/api/products'
+   );
 
    const response = await request.data;
 
@@ -18,13 +20,16 @@ export default function Home() {
  }, []);
 
  const onSubmit = async () => {
-  const request = await axios.post('http://localhost:3000/api/products', {
-   name: 'testingResponseAsRestAPI',
-   released_year: 2022,
-   githut_rank: 100,
-   pypl_rank: 200,
-   tiobe_rank: 300,
-  });
+  const request = await axios.post(
+   'http://next-test-eight-black.vercel.app/api/products',
+   {
+    name: 'testingResponseAsRestAPI',
+    released_year: 2022,
+    githut_rank: 100,
+    pypl_rank: 200,
+    tiobe_rank: 300,
+   }
+  );
 
   const response = await request.data;
 
@@ -33,7 +38,7 @@ export default function Home() {
 
  const onDelete = async (id) => {
   const request = await axios.delete(
-   `http://localhost:3000/api/products/${id}`
+   `http://next-test-eight-black.vercel.app/api/products/${id}`
   );
 
   console.log(request);
